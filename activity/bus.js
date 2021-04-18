@@ -77,19 +77,15 @@ console.log("Before");
     await newPage.click("a[href='https://mail.yahoo.com/?.intl=in&.lang=en-IN&.partner=none&.src=fp']");
     await newPage.waitForSelector("a[aria-label='Compose']");
     await newPage.click("[aria-label='Compose']");
-    //await newPage.waitForSelector(".typeahead-inputs-container.M_0.p_R.H_6NIX input[role='combobox']");
+
     await newPage.waitForNavigation();
-    //await newPage.waitForSelector(".typeahead-inputs-container.M_0.p_R.H_6NIX input[role='combobox']");
-    //await newPage.click(".typeahead-inputs-container.M_0.p_R.H_6NIX input[role='combobox']",{delay : 200});
+
     await newPage.type(".typeahead-inputs-container.M_0.p_R.H_6NIX input[role='combobox']",user_email);
     await newPage.waitForSelector('input[data-test-id="compose-subject"]');
     await newPage.type('input[data-test-id="compose-subject"]',msub);
     await newPage.click(".rte.em_N.ir_0.iy_A.iz_h.N_6Fd5");
     await newPage.type(".rte.em_N.ir_0.iy_A.iz_h.N_6Fd5",mail);
-    //await newPage.waitForSelector("[data-test-id='compose-send-button']");
-    //await newPage.click("[data-test-id='compose-send-button']");
-    //await newPage.waitForNavigation();
-    //await newPage.click("[data-test-id='compose-send-button']",{delay : 400});
+  
     await newPage.waitForSelector('button[data-test-id="compose-send-button"]');
     await newPage.click('button[data-test-id="compose-send-button"]');
     console.log(mail);
